@@ -26,6 +26,6 @@ PASSO A PASSO PARA INICIALIZAR O PROJETO:
 
 - Agora, navegando através do terminal, adentre a pasta /backend e incie o projeto com o comando 'npm run dev'
 
-- Após o backend estar ativo, abra um novo terminal e navegue até a pasta /front-end e inicie o projeto com o comando 'npm start'
+- Após o backend estar ativo, abra um novo terminal e navegue até a pasta /portal-noticias e inicie o projeto com o comando 'npm start'
 
 - Com isso deve ser incializado o navegador na url http://localhost:3000/ com o projeto funcionando.
