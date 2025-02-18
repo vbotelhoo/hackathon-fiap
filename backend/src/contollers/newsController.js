@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { listaNoticias, createNoticia, procurarNoticias, procurarNoticiasPorParametros} from "../services/newsService.js";
+import { listaNoticias, createNoticia, atualizaNoticia, deletaNoticia} from "../services/newsService.js";
 
 const router = Router();
 
@@ -37,6 +37,37 @@ router.post('/publicarNoticia', async (req, res) =>{
     } catch (error) {
         res.status(400).send(error)
     }
+})
+
+router.put('/atualizaNoticia/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const atualizacao = req.body;
+      const noticia = await atualizaNoticia(id, atualizacao)
+      
+      if (!noticia){
+        return res.status(404).json({ mensagem: "Noticia não encontrada"});
+      }
+
+      res.status(201).send(noticia)
+    } catch (error) {
+      res.status(400).send(error)
+    }
+}
+)
+
+router.delete('/deletaNoticia/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const noticia = await deletaNoticia(id);
+
+    if (!noticia) {
+      return res.status(404).json({ mensagem: "Notícia não encontrada" });
+    }
+    res.status(200).json({ mensagem: "Notícia deletada com sucesso" });
+  } catch (error) {
+    res.status(400).send(error)
+  }
 })
 
 export default router;

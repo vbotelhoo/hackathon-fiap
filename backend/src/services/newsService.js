@@ -13,3 +13,15 @@ export const createNoticia = async (noticia) => {
     const createNoticia = await newsModel.create(noticia);
     return createNoticia;
 };
+
+export const atualizaNoticia = async (id, noticia) => {
+    await databaseConnection();
+    const atualizaNoticia = await newsModel.findByIdAndUpdate(id, noticia, { new: true});
+    return atualizaNoticia
+};
+
+export const deletaNoticia = async (id) => {
+    await databaseConnection();
+    const deletaNoticia = await newsModel.findByIdAndDelete(id);
+    return deletaNoticia
+}

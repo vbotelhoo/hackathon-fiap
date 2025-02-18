@@ -12,7 +12,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/news/");
+        const response = await fetch("http://localhost:3002/news/");
         if (!response.ok) throw new Error("Erro ao buscar dados");
 
         const result = await response.json();
@@ -54,7 +54,7 @@ const App = () => {
       <div className="news-site">
         <header className="header">
           <h1>FIAP Tech News</h1>
-          <nav className="category-menu">
+          <nav className="category-menu" style={{ flexWrap: "wrap" }}>
             {categories.map((category) => (
               <Link
                 key={category}

@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import 'dotenv/config';
 
-const URI = 'mongodb+srv://USER:PASSWORD@fiapnews.i6xuq.mongodb.net/?retryWrites=true&w=majority&appName=FiapNews'
+const URI = process.env.DB_DATABASE;
 
 const databaseConnection = async () => {
     if(!global.mongoose){

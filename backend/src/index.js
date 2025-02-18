@@ -1,10 +1,10 @@
-import express from 'express'
+import express from 'express';
 import bodyParser from 'body-parser';
-import newsController from './crontollers/newsController'
-
+import newsController from './contollers/newsController';
+import 'dotenv/config';
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT;
 const cors = require('cors');
 
 app.use(bodyParser.json());
