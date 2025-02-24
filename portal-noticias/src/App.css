@@ -21,6 +21,12 @@
   font-size: 2rem;
 }
 
+.logo {
+  width: 450px;  /* Ajuste conforme necessário */
+  height: auto;
+  margin-right: 10px;
+}
+
 /* Menu de categorias */
 .category-menu {
   display: flex;

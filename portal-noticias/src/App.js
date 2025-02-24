@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import NoticiaDetalhada from "./NoticiaDetalhada";
 import FormularioNoticia from "./FormularioNoticia";
+import logo from "./logo.png";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -50,7 +51,7 @@ const App = () => {
     <Router>
       <div className="news-site">
         <header className="header">
-          <h1>FIAP Tech News</h1>
+          <img src={logo} alt="Logo FIAP Tech News" className="logo" />
           <nav className="category-menu" style={{ flexWrap: "wrap" }}>
             {categories.map((category) => (
               <Link
